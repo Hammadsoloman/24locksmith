@@ -1,0 +1,175 @@
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style>
+    .rating-star {
+      @apply text-yellow-500;
+    }
+
+    #masonry-grid {
+      width: 100%;
+    }
+
+    .grid-item {
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+
+<section class="bg-white">
+  <div class="mx-auto max-w-screen-2xl px-4 py-8 text-center lg:px-6 lg:py-16">
+    <div class="mx-auto max-w-screen-sm">
+      <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">
+        Testimonials
+      </h2>
+      <p class="mb-8 font-light text-gray-500 sm:text-xl lg:mb-16">
+        Read what our customers have to say about their experience with our
+        products and services.
+      </p>
+    </div>
+    <div
+      class="mb-8 grid lg:mb-12 lg:grid-cols-2 xl:grid-cols-3"
+      id="masonry-grid"
+    >
+      <div class="grid-sizer"></div>
+
+      <div class="grid-item w-full lg:w-[48%] xl:w-[32%]">
+        <figure
+          class="flex flex-col items-center justify-center border-b border-gray-200 bg-gray-50 p-8 text-center md:p-12 lg:border-r"
+        >
+          <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Excited to use this product
+            </h3>
+            <p class="my-4">
+              "I recently started using Flowbite Pro, and I'm excited about how
+              much it simplifies my work. The templates are easy to integrate,
+              and the code is well-organized. It's a huge time-saver!"
+            </p>
+          </blockquote>
+          <figcaption class="flex items-center justify-center space-x-3">
+            <img
+              class="h-9 w-9 rounded-full"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+              alt="profile picture"
+            />
+            <div class="space-y-0.5 text-left font-medium">
+              <div>Emma Thompson</div>
+              <div class="text-sm font-light text-gray-500">
+                UX Designer at Tech Innovations
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="grid-item w-full lg:w-[48%] xl:w-[32%]">
+        <figure
+          class="flex flex-col items-center justify-center border-b border-gray-200 bg-gray-50 p-8 text-center md:p-12 lg:border-r"
+        >
+          <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Amazingly simple integration process
+            </h3>
+            <p class="my-4">
+              "I recently got my hands on Flowbite Pro, and I'm amazed at how
+              simple it is to integrate within my application. The templates are
+              clean, and customization is a breeze. Highly recommended!"
+            </p>
+            <p class="my-4">
+              "Flowbite has made my development process much smoother. It's a
+              fantastic tool for developers."
+            </p>
+          </blockquote>
+          <figcaption class="flex items-center justify-center space-x-3">
+            <img
+              class="h-9 w-9 rounded-full"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+              alt="profile picture"
+            />
+            <div class="space-y-0.5 text-left font-medium">
+              <div>John Doe</div>
+              <div class="text-sm font-light text-gray-500">
+                Software Engineer at Tech Solutions Inc.
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="grid-item w-full lg:w-[48%] xl:w-[32%]">
+        <figure
+          class="flex flex-col items-center justify-center border-b border-gray-200 bg-gray-50 p-8 text-center md:p-12 lg:border-r"
+        >
+          <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Effortless integration process
+            </h3>
+            <p class="my-4">
+              "Flowbite Pro has been a game-changer for me. The integration
+              process is effortless, and the results are stunning. I'm thrilled
+              with how quickly I can customize and deploy."
+            </p>
+          </blockquote>
+          <figcaption class="flex items-center justify-center space-x-3">
+            <img
+              class="h-9 w-9 rounded-full"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+              alt="profile picture"
+            />
+            <div class="space-y-0.5 text-left font-medium">
+              <div>Alice Smith</div>
+              <div class="text-sm font-light text-gray-500">
+                Web Developer at Digital Designs Ltd.
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="grid-item w-full lg:w-[48%] xl:w-[32%]">
+        <figure
+          class="flex flex-col items-center justify-center border-b border-gray-200 bg-gray-50 p-8 text-center md:p-12 lg:border-r"
+        >
+          <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Quick and easy to implement
+            </h3>
+            <p class="my-4">
+              "I'm impressed with Flowbite Pro's ease of integration. Within
+              minutes, I was able to implement it into my project. The templates
+              are clean, and the documentation is clear and concise."
+            </p>
+          </blockquote>
+          <figcaption class="flex items-center justify-center space-x-3">
+            <img
+              class="h-9 w-9 rounded-full"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+              alt="profile picture"
+            />
+            <div class="space-y-0.5 text-left font-medium">
+              <div>Michael Johnson</div>
+              <div class="text-sm font-light text-gray-500">
+                Frontend Developer at Code Masters
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+<script>
+  // Initialize Masonry grid
+  var grid = document.getElementById("masonry-grid");
+
+  var masonry = new Masonry(grid, {
+    // Options
+    itemSelector: ".grid-item",
+    columnWidth: ".grid-sizer",
+    percentPosition: true,
+    gutter: -8,
+  });
+</script>

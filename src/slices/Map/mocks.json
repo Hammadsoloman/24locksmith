@@ -1,0 +1,21 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"coordinates": {
+				"position": {
+					"lat": 48.8841267,
+					"lng": 2.3300579
+				},
+				"__TYPE__": "GeoPointContent"
+			},
+			"marker_label": {
+				"__TYPE__": "FieldContent",
+				"value": "fur",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

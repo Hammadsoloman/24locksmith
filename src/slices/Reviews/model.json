@@ -1,0 +1,63 @@
+{
+  "id": "reviews",
+  "type": "SharedSlice",
+  "name": "Reviews",
+  "description": "Reviews",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "content": {
+          "type": "Text",
+          "config": {
+            "label": "Content",
+            "placeholder": ""
+          }
+        },
+        "author_image": {
+          "type": "Image",
+          "config": {
+            "label": "Author Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "author_name": {
+          "type": "Text",
+          "config": {
+            "label": "Author Name",
+            "placeholder": ""
+          }
+        },
+        "author_tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Author Tagline",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

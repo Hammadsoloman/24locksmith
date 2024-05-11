@@ -1,0 +1,67 @@
+{
+  "id": "who_we_are",
+  "type": "SharedSlice",
+  "name": "WhoWeAre",
+  "description": "WhoWeAre",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "tagline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tagline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "contact_phone_number": {
+          "type": "Text",
+          "config": {
+            "label": "Contact Phone Number",
+            "placeholder": ""
+          }
+        },
+        "featured_image": {
+          "type": "Image",
+          "config": {
+            "label": "Featured Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "featured_image_lable": {
+          "type": "Text",
+          "config": {
+            "label": "Featured Image Lable",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "item": {
+          "type": "Text",
+          "config": {
+            "label": "Item",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

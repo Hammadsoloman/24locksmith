@@ -1,0 +1,103 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Canal"
+						}
+					}
+				]
+			},
+			"tagline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Amet fugiat est pariatur enim consequat Lorem ad sit. Tempor laborum reprehenderit non id in magna sit aliqua eu."
+						}
+					}
+				]
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "mother",
+				"type": "Text"
+			},
+			"button_navigates_to": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"icon",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+								"width": 3212,
+								"height": 3880
+							},
+							"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+							"width": 3212,
+							"height": 3880,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"heading",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading4",
+									"content": {
+										"text": "Pupil"
+									}
+								}
+							]
+						}
+					],
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Commodo qui commodo anim. Exercitation ad in in incididunt officia exercitation ad sit cillum. Velit ex adipisicing eu exercitation aliqua cupidatat dolore."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

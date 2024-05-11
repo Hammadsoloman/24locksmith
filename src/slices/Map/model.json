@@ -1,0 +1,32 @@
+{
+  "id": "map",
+  "type": "SharedSlice",
+  "name": "Map",
+  "description": "Map",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "coordinates": {
+          "type": "GeoPoint",
+          "config": {
+            "label": "Coordinates"
+          }
+        },
+        "marker_label": {
+          "type": "Text",
+          "config": {
+            "label": "Marker Label",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
