@@ -82,15 +82,11 @@ export default function HeaderNavigation({
           Call Now{" "}
           <a href={`tel:${settings?.data?.phone}`}>{settings?.data?.phone}</a>
         </div>
-        <a
-          href={`${settings?.data?.calendly_link}`}
-          className="align-end"
-          target="blank"
-        >
+        <PrismicNextLink field={settings?.data?.calendly_link}>
           <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 ">
             Book Appointment
           </button>
-        </a>
+        </PrismicNextLink>
       </div>
       <header
         className={cn(

@@ -19,7 +19,7 @@ const WhoWeAre = ({ slice }: WhoWeAreProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <section>
-        <div className="rc-container flex flex-col gap-10 duration-300 md:flex-row">
+        <div className="rc-container flex flex-col gap-10 duration-300 md:flex-row overflow-hidden">
           {/* CTA------------------------------------------------------------starts here */}
           <motion.div    initial={{ opacity: 0, x: -100 }}
           whileInView={{

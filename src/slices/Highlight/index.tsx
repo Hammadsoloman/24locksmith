@@ -19,7 +19,7 @@ const Highlight = ({ slice }: HighlightProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid grid-cols-1 grid-rows-2 place-items-center gap-6 md:grid-cols-2 md:grid-rows-1">
+      <div className="grid grid-cols-1 grid-rows-2 place-items-center gap-6 md:grid-cols-2 md:grid-rows-1 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{

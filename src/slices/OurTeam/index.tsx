@@ -34,7 +34,7 @@ const OurTeam = ({ slice }: OurTeamProps): JSX.Element => {
           {/* CTA------------------------------------------------------------ends here */}
 
           {/* Cards------------------------------------------------------------starts here */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 overflow-hidden">
             {slice.items.map((item, idx) => (
               <motion.div
                 initial={{ opacity: 0, x: 100 }}

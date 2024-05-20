@@ -42,7 +42,7 @@ const OurValue = ({ slice }: OurValueProps): JSX.Element => {
         </div>
         {/* Title------------------------------------------------------------ends here */}
 
-        <div className="rc-container -mt-20 !py-0">
+        <div className="rc-container -mt-20 !py-0 overflow-hidden" >
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{

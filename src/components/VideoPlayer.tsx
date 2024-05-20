@@ -9,7 +9,7 @@ export default function VideoPlayer({ slice }: any) {
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = () => {
-    console.log(videoRef.current, mobileVideoRef.current);
+   
     if (videoRef.current) {
       videoRef.current.play();
     }

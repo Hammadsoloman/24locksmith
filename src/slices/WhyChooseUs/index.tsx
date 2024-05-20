@@ -51,7 +51,7 @@ const WhyChooseUs = ({ slice }: WhyChooseUsProps): JSX.Element => {
             {/* CTA------------------------------------------------------------ends here */}
 
             {/* Cards------------------------------------------------------------starts here */}
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 overflow-hidden">
               {slice.items.map((card, idx) => (
                 <motion.div   initial={{ opacity: 0, y: 10 }}
                 whileInView={{
