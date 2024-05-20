@@ -1,5 +1,5 @@
 import { createClient } from "@/prismicio";
-import { isFilled } from "@prismicio/client";
+import { asText, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import Link from "next/link";
@@ -121,7 +121,7 @@ export default async function Footer() {
                         href={`/locations/${location.uid}`}
                         className="border-white hover:border-b"
                       >
-                        {location.data.location}
+                        {asText(location.data.title)}
                       </Link>
                     </li>
                   );
@@ -135,7 +135,7 @@ export default async function Footer() {
                         href={`/locations/${location.uid}`}
                         className="border-white hover:border-b"
                       >
-                        {location.data.location}
+                        {asText(location.data.title)}
                       </Link>
                     </li>
                   );

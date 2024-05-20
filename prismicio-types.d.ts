@@ -127,13 +127,13 @@ interface LocationDocumentData {
   /**
    * Location field in *Location*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: location.location
+   * - **API ID Path**: location.title
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  location: prismic.KeyTextField;
+  title: prismic.RichTextField;
 
   /**
    * Slice Zone field in *Location*
@@ -226,7 +226,9 @@ export interface PageDocumentDataDropdownItemsItem {
    * - **API ID Path**: page.dropdown_items[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.ContentRelationshipField<"page" | "blog_post" | "service_page">;
+  link: prismic.ContentRelationshipField<
+    "page" | "blog_post" | "service_page" | "location"
+  >;
 }
 
 /**
