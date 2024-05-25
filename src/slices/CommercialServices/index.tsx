@@ -4,7 +4,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 /**
- * Props for `CommercialServices`.
+ * Props for `CommercialServices`...
  */
 export type CommercialServicesProps =
   SliceComponentProps<Content.CommercialServicesSlice>;

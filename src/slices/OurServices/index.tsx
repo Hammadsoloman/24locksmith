@@ -4,7 +4,7 @@ import Bounded from "@/components/layout/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 
 /**
- * Props for `OurServices`.
+ * Props for `OurServices`....
  */
 export type OurServicesProps = SliceComponentProps<Content.OurServicesSlice>;
 

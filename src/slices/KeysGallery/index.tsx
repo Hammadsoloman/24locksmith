@@ -4,7 +4,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**
- * Props for `KeysGallery`.
+ * Props for `KeysGallery`...
  */
 export type KeysGalleryProps = SliceComponentProps<Content.KeysGallerySlice>;
 
