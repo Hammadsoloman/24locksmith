@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"slices\\\\Map\\\\index.tsx -> react-leaflet\":{\"id\":\"slices\\\\Map\\\\index.tsx -> react-leaflet\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_react-leaflet_lib_index_js.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST='{"slices\\\\Map\\\\index.tsx -> react-leaflet":{"id":143,"files":["static/chunks/d0deef33.ea03e827ef8b4114.js","static/chunks/143.36cab21c1a0e27bf.js"]}}';
