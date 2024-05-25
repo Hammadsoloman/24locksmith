@@ -17,6 +17,10 @@ export default async function Header() {
     client.getAllByType("page"),
   ]);
 
+  const carKeyReplacementPages = await client.getAllByType(
+    "car_key_replacement",
+  );
+
   let pages: PageDocument<string>[] = filterAndSortDocument(items[1]);
 
   const dropdownItems = await Promise.all(
@@ -39,7 +43,13 @@ export default async function Header() {
     };
   });
 
-  return <HeaderNavigation pages={mutated as any} settings={items[0]} />;
+  return (
+    <HeaderNavigation
+      pages={mutated as any}
+      settings={items[0]}
+      carKeyReplacementPages={carKeyReplacementPages as any}
+    />
+  );
 }
 
 function filterAndSortDocument(documents: any[]) {

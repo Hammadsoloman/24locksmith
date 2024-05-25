@@ -43,18 +43,8 @@ const OurValue = ({ slice }: OurValueProps): JSX.Element => {
         {/* Title------------------------------------------------------------ends here */}
 
         <div className="rc-container -mt-20 !py-0 overflow-hidden" >
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              transition: {
-                //type: "spring",
-                bounce: 0,
-                duration: 2,
-              },
-            }}
-            viewport={{ amount: 0.5,once:true  }}
+          <div
+           
             className="flex flex-col items-center bg-[#14193C] text-white/90 duration-300 md:flex-row"
           >
             {/* Accordion------------------------------------------------------------starts here */}
@@ -84,7 +74,7 @@ const OurValue = ({ slice }: OurValueProps): JSX.Element => {
               <PrismicImage field={slice.primary.featured_image} />
             </div>
             {/* Image------------------------------------------------------------ends here */}
-          </motion.div>
+          </div>
         </div>
       </section>
     </section>

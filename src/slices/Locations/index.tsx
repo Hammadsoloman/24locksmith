@@ -1,14 +1,10 @@
-import Bounded from "@/components/layout/Bounded";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import Image from "next/image";
-import ContactUsBackground from "../../../public/assets/images/6afa024839fd19274156129e486eca70727249fa-1920x540.webp";
+import {  SliceComponentProps } from "@prismicio/react";
 import { LocationDocument } from "../../../prismicio-types";
 import { createClient } from "@/prismicio";
 import Link from "next/link";
 import { asText } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import { Children } from "react";
+
 /**
  * Props for `Locations`.
  */
@@ -18,7 +14,7 @@ export type LocationsProps = SliceComponentProps<Content.LocationsSlice>;
  * Component for "Locations" Slices.
  */
 const Locations = async ({ slice }: LocationsProps) => {
-  console.log(slice?.primary?.background_image?.url?.split("?")[0]);
+
   const client = createClient();
   const locations: LocationDocument[] = await client.getAllByType("location");
 

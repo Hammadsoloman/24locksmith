@@ -118,6 +118,87 @@ export type BlogPostDocument<Lang extends string = string> =
     Lang
   >;
 
+type CarKeyReplacementDocumentDataSlicesSlice =
+  | BannerSlice
+  | KeysGallerySlice
+  | OurServicesSlice
+  | CommercialServicesSlice
+  | BodySlice;
+
+/**
+ * Content for Car Key Replacement documents
+ */
+interface CarKeyReplacementDocumentData {
+  /**
+   * Title field in *Car Key Replacement*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: car_key_replacement.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Car Key Replacement*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: car_key_replacement.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CarKeyReplacementDocumentDataSlicesSlice> /**
+   * Meta Description field in *Car Key Replacement*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: car_key_replacement.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Car Key Replacement*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: car_key_replacement.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Car Key Replacement*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: car_key_replacement.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Car Key Replacement document from Prismic
+ *
+ * - **API ID**: `car_key_replacement`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CarKeyReplacementDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CarKeyReplacementDocumentData>,
+    "car_key_replacement",
+    Lang
+  >;
+
 type LocationDocumentDataSlicesSlice = KeysGallerySlice | BodySlice;
 
 /**
@@ -710,6 +791,7 @@ export type SettingsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | BlogPostDocument
+  | CarKeyReplacementDocument
   | LocationDocument
   | PageDocument
   | ServicePageDocument
@@ -2525,6 +2607,9 @@ declare module "@prismicio/client" {
       BlogPostDocument,
       BlogPostDocumentData,
       BlogPostDocumentDataSlicesSlice,
+      CarKeyReplacementDocument,
+      CarKeyReplacementDocumentData,
+      CarKeyReplacementDocumentDataSlicesSlice,
       LocationDocument,
       LocationDocumentData,
       LocationDocumentDataSlicesSlice,

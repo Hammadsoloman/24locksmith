@@ -16,7 +16,7 @@ export type CommercialServicesProps =
 const CommercialServices = ({
   slice,
 }: CommercialServicesProps): JSX.Element => {
-  console.log(slice);
+
   return (
     <section
       data-slice-type={slice.slice_type}

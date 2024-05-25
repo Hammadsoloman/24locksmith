@@ -15,6 +15,7 @@ import {
   SettingsDocument,
 } from "../../prismicio-types";
 import Bounded from "./layout/Bounded";
+import MultiLevelDropDown from "./ui/multiLevelDropDown";
 
 export type CustomPageDocument = PageDocument & {
   data: {
@@ -25,6 +26,7 @@ export type CustomPageDocument = PageDocument & {
 type HeaderNavigationProps = {
   pages: CustomPageDocument[];
   settings: SettingsDocument;
+  carKeyReplacementPages: CustomPageDocument[];
 };
 
 const isHome = (uid: string): boolean => {
@@ -36,8 +38,8 @@ const isHome = (uid: string): boolean => {
 export default function HeaderNavigation({
   pages,
   settings,
+  carKeyReplacementPages,
 }: HeaderNavigationProps) {
-  console.log(settings);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const uid = usePathname();
@@ -138,7 +140,12 @@ export default function HeaderNavigation({
           </Link>
 
           {innerWidth > mobileBreakpoint && (
-            <Menu closeModal={() => {}} settings={settings} pages={pages} />
+            <Menu
+              closeModal={() => {}}
+              settings={settings}
+              pages={pages}
+              carKeyReplacementPages={carKeyReplacementPages}
+            />
           )}
         </Bounded>
       </header>
@@ -171,6 +178,7 @@ export default function HeaderNavigation({
             <Menu
               closeModal={() => setModalVisible(false)}
               settings={settings}
+              carKeyReplacementPages={carKeyReplacementPages}
               pages={pages}
             />
           )}
@@ -196,10 +204,13 @@ const HeaderImage = ({ field }: { field: ImageFieldImage }) => {
 const Menu = ({
   settings,
   pages,
+  carKeyReplacementPages,
   closeModal,
 }: HeaderNavigationProps & { closeModal: () => void }) => {
   const uid = usePathname();
-
+  const Locations = pages.find(
+    (p) => p.type === "page" && p.uid === "locations",
+  )?.data?.dropdown_items;
   return (
     <>
       <nav>
@@ -212,86 +223,91 @@ const Menu = ({
                 return 0;
               }
             })
-            .map((page: PageDocument) => (
-              <Link
-                href={
-                  (page.data.act_as_button
-                    ? page.data.button_trigger ?? page.url
-                    : page.url) as string
-                }
-                onClick={(e) => {
-                  if (page.data.act_as_button) {
-                    e.preventDefault();
-                    const a = document.createElement("a");
-
-                    if (page.data.button_trigger) {
-                      a.setAttribute("href", page.data.button_trigger);
-                      a.click();
-                    }
+            .map((page: PageDocument) => {
+        
+              return (
+                <Link
+                  href={
+                    (page.data.act_as_button
+                      ? page.data.button_trigger ?? page.url
+                      : page.url) as string
                   }
+                  onClick={(e) => {
+                    if (page.data.act_as_button) {
+                      e.preventDefault();
+                      const a = document.createElement("a");
 
-                  closeModal();
-                }}
-                key={page.id}
-                className="group relative w-full gap-2 border border-gray-100/60 bg-gray-50 p-3 md:flex md:w-auto md:border-none md:bg-transparent md:p-0"
-              >
-                <span>
-                  <PrismicText field={page.data.title} />
-                </span>
+                      if (page.data.button_trigger) {
+                        a.setAttribute("href", page.data.button_trigger);
+                        a.click();
+                      }
+                    }
 
-                {page.data.isdropdown && (
-                  <>
-                    <Image
-                      src={"/assets/icons/downward-arrow.png"}
-                      alt="DropDownArrow"
-                      width={12}
-                      height={12}
-                      className={cn(
-                        "hidden object-contain md:block",
-                        isHome(uid) ? "brightness-0 invert" : "inline",
-                      )}
-                    />
+                    closeModal();
+                  }}
+                  key={page.id}
+                  className="group relative w-full gap-2 border border-gray-100/60 bg-gray-50 p-3 md:flex md:w-auto md:border-none md:bg-transparent md:p-0"
+                >
+                  <span>
+                    <PrismicText field={page.data.title} />
+                  </span>
 
-                    <div className="relative w-max max-w-2xl pt-2 text-black hover:block group-hover:block md:absolute md:left-1/2 md:top-full md:hidden md:-translate-x-1/2">
-                      <div className="rounded border-none border-gray-100 md:border md:bg-white md:p-4 md:shadow">
-                        <h4 className="mb-2 hidden text-xl font-medium md:block">
-                          <PrismicText field={page.data.title} />
-                        </h4>
+                  {page.data.isdropdown && (
+                    <>
+                      <Image
+                        src={"/assets/icons/downward-arrow.png"}
+                        alt="DropDownArrow"
+                        width={12}
+                        height={12}
+                        className={cn(
+                          "hidden object-contain md:block",
+                          isHome(uid) ? "brightness-0 invert" : "inline",
+                        )}
+                      />
 
-                        <div
-                          className={cn(
-                            "capitalize md:grid",
-                            `md:grid-cols-${
-                              page.data.dropdown_items.length > 3
-                                ? 3
-                                : page.data.dropdown_items.length
-                            }`,
-                          )}
-                        >
-                          {page.data.dropdown_items.map((item: any) => (
-                            <div
-                              key={item.id}
-                              className="flex items-start gap-2 rounded p-2 hover:bg-gray-100"
-                            >
-                              <Image
-                                className="mt-1 -rotate-90 object-contain"
-                                src={"/assets/icons/downward-arrow.png"}
-                                alt="DropDownArrow"
-                                width={12}
-                                height={12}
-                              />
-                              <Link href={`/${page.uid}/${item.uid}`}>
-                                <PrismicText field={item.data.title} />
-                              </Link>
-                            </div>
-                          ))}
+                      <div className="relative w-max max-w-2xl pt-2 text-black hover:block group-hover:block md:absolute md:left-1/2 md:top-full md:hidden md:-translate-x-1/2">
+                        <div className="rounded border-none border-gray-100 md:border md:bg-white md:p-0 md:shadow">
+                          <h4 className="mb-2 hidden px-4 pt-4 text-xl font-medium md:block">
+                            <PrismicText field={page.data.title} />
+                          </h4>
+
+                          <div
+                            className={cn(
+                              "capitalize md:grid",
+                              `md:grid-cols-1`,
+                            )}
+                          >
+                            {page.type === "page" &&
+                              page.uid === "services" && (
+                                <div className="flex items-start gap-2 rounded py-2 hover:bg-gray-100">
+                                  <MultiLevelDropDown locations={Locations} carKeyReplacementPages={carKeyReplacementPages}/>
+                                </div>
+                              )}
+                            {page.data.dropdown_items.map((item: any) => (
+                              <div
+                                key={item.id}
+                                className="flex items-start gap-2 rounded px-4 py-2 hover:bg-gray-100"
+                              >
+                                <Image
+                                  className="mt-1 -rotate-90 object-contain"
+                                  src={"/assets/icons/downward-arrow.png"}
+                                  alt="DropDownArrow"
+                                  width={12}
+                                  height={12}
+                                />
+                                <Link href={`/${page.uid}/${item.uid}`}>
+                                  <PrismicText field={item.data.title} />
+                                </Link>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </>
-                )}
-              </Link>
-            ))}
+                    </>
+                  )}
+                </Link>
+              );
+            })}
         </ul>
       </nav>
 
