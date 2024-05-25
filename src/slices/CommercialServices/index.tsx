@@ -1,3 +1,4 @@
+"use client";
 import Bounded from "@/components/layout/Bounded";
 import { Content, asText } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";

@@ -1,3 +1,4 @@
+"use client";
 import { Content, asText } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/layout/Bounded";
