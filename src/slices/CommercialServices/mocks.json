@@ -1,0 +1,85 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Qui sunt Lorem cupidatat minim non veniam nisi qui elit. Incididunt ullamco consectetur adipisicing magna ut Lorem exercitation laborum exercitation exercitation quis nostrud nulla cupidatat mollit."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In nulla est fugiat laboris excepteur occaecat consequat enim."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"service_image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+								"width": 4000,
+								"height": 4000
+							},
+							"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+							"width": 4000,
+							"height": 4000,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"service_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "determine",
+							"type": "Text"
+						}
+					],
+					[
+						"service_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ut enim et id cupidatat veniam et sit in officia ad enim ea in. Adipisicing consectetur consequat irure sunt aute commodo consequat excepteur."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

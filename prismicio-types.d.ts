@@ -118,7 +118,7 @@ export type BlogPostDocument<Lang extends string = string> =
     Lang
   >;
 
-type LocationDocumentDataSlicesSlice = BodySlice;
+type LocationDocumentDataSlicesSlice = KeysGallerySlice | BodySlice;
 
 /**
  * Content for Location documents
@@ -195,6 +195,7 @@ export type LocationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | OurServicesSlice
   | WhyChooseUsSlice
   | WhoWeAreSlice
   | OurValueSlice
@@ -371,6 +372,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServicePageDocumentDataSlicesSlice =
+  | CommercialServicesSlice
   | WhoWeAreSlice
   | WhyChooseUsSlice
   | OurTeamSlice
@@ -1072,6 +1074,96 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *CommercialServices → Primary*
+ */
+export interface CommercialServicesSliceDefaultPrimary {
+  /**
+   * Title field in *CommercialServices → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: commercial_services.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *CommercialServices → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: commercial_services.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CommercialServices → Items*
+ */
+export interface CommercialServicesSliceDefaultItem {
+  /**
+   * Service Image field in *CommercialServices → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: commercial_services.items[].service_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  service_image: prismic.ImageField<never>;
+
+  /**
+   * Service name field in *CommercialServices → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: commercial_services.items[].service_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_name: prismic.KeyTextField;
+
+  /**
+   * Service Description field in *CommercialServices → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: commercial_services.items[].service_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  service_description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CommercialServices Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CommercialServicesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CommercialServicesSliceDefaultPrimary>,
+  Simplify<CommercialServicesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *CommercialServices*
+ */
+type CommercialServicesSliceVariation = CommercialServicesSliceDefault;
+
+/**
+ * CommercialServices Shared Slice
+ *
+ * - **API ID**: `commercial_services`
+ * - **Description**: CommercialServices
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CommercialServicesSlice = prismic.SharedSlice<
+  "commercial_services",
+  CommercialServicesSliceVariation
+>;
+
+/**
  * Primary content in *ContentGrid → Primary*
  */
 export interface ContentGridSliceDefaultPrimary {
@@ -1437,6 +1529,61 @@ export type HighlightSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *KeysGallery → Primary*
+ */
+export interface KeysGallerySliceDefaultPrimary {
+  /**
+   * Title field in *KeysGallery → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: keys_gallery.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Gallery Image field in *KeysGallery → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: keys_gallery.primary.gallery_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  gallery_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for KeysGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type KeysGallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<KeysGallerySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *KeysGallery*
+ */
+type KeysGallerySliceVariation = KeysGallerySliceDefault;
+
+/**
+ * KeysGallery Shared Slice
+ *
+ * - **API ID**: `keys_gallery`
+ * - **Description**: KeysGallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type KeysGallerySlice = prismic.SharedSlice<
+  "keys_gallery",
+  KeysGallerySliceVariation
+>;
+
+/**
  * Primary content in *Map → Primary*
  */
 export interface MapSliceDefaultPrimary {
@@ -1487,6 +1634,76 @@ type MapSliceVariation = MapSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type MapSlice = prismic.SharedSlice<"map", MapSliceVariation>;
+
+/**
+ * Primary content in *OurServices → Primary*
+ */
+export interface OurServicesSliceDefaultPrimary {
+  /**
+   * Title field in *OurServices → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_services.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *OurServices → Items*
+ */
+export interface OurServicesSliceDefaultItem {
+  /**
+   * Service Image field in *OurServices → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_services.items[].service_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  service_image: prismic.ImageField<never>;
+
+  /**
+   * Service name field in *OurServices → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_services.items[].service_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_name: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for OurServices Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurServicesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OurServicesSliceDefaultPrimary>,
+  Simplify<OurServicesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *OurServices*
+ */
+type OurServicesSliceVariation = OurServicesSliceDefault;
+
+/**
+ * OurServices Shared Slice
+ *
+ * - **API ID**: `our_services`
+ * - **Description**: OurServices
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurServicesSlice = prismic.SharedSlice<
+  "our_services",
+  OurServicesSliceVariation
+>;
 
 /**
  * Primary content in *OurTeam → Primary*
@@ -2288,6 +2505,11 @@ declare module "@prismicio/client" {
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      CommercialServicesSlice,
+      CommercialServicesSliceDefaultPrimary,
+      CommercialServicesSliceDefaultItem,
+      CommercialServicesSliceVariation,
+      CommercialServicesSliceDefault,
       ContentGridSlice,
       ContentGridSliceDefaultPrimary,
       ContentGridSliceDefaultItem,
@@ -2311,10 +2533,19 @@ declare module "@prismicio/client" {
       HighlightSliceVariation,
       HighlightSliceDefault,
       HighlightSliceReverse,
+      KeysGallerySlice,
+      KeysGallerySliceDefaultPrimary,
+      KeysGallerySliceVariation,
+      KeysGallerySliceDefault,
       MapSlice,
       MapSliceDefaultPrimary,
       MapSliceVariation,
       MapSliceDefault,
+      OurServicesSlice,
+      OurServicesSliceDefaultPrimary,
+      OurServicesSliceDefaultItem,
+      OurServicesSliceVariation,
+      OurServicesSliceDefault,
       OurTeamSlice,
       OurTeamSliceDefaultPrimary,
       OurTeamSliceDefaultItem,
