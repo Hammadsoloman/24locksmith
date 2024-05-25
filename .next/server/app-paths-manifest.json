@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/exit-preview/route": "app/api/exit-preview/route.js",
+  "/api/posts/route": "app/api/posts/route.js",
+  "/api/preview/route": "app/api/preview/route.js",
+  "/api/revalidate/route": "app/api/revalidate/route.js",
+  "/icon.png/route": "app/icon.png/route.js",
+  "/slice-simulator/page": "app/slice-simulator/page.js",
+  "/page": "app/page.js",
+  "/[uid]/page": "app/[uid]/page.js",
+  "/locations/[uid]/page": "app/locations/[uid]/page.js",
+  "/blog/[uid]/page": "app/blog/[uid]/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/services/[uid]/page": "app/services/[uid]/page.js"
+}
