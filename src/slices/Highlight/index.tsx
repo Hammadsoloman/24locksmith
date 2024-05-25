@@ -4,6 +4,7 @@ import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
+import { once } from "events";
 import { motion } from "framer-motion";
 /**
  * Props for `Highlight`.
@@ -28,10 +29,10 @@ const Highlight = ({ slice }: HighlightProps): JSX.Element => {
             transition: {
               type: "spring",
               bounce: 0.4,
-              duration: 1,
+              duration: 2,
             },
           }}
-          viewport={{ amount: 0.5 }}
+          viewport={{ amount: 0.5,once:true }}
           className="md:prose"
         >
           {isFilled.richText(slice.primary.heading) && (
@@ -54,10 +55,10 @@ const Highlight = ({ slice }: HighlightProps): JSX.Element => {
             transition: {
               type: "spring",
               bounce: 0.4,
-              duration: 1,
+              duration: 2,
             },
           }}
-          viewport={{ amount: 0.5 }}
+          viewport={{ amount: 0.5 ,once:true }}
           className={clsx(
             "-order-1",
             slice.variation === "reverse" ? "" : "md:order-1",

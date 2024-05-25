@@ -49,12 +49,12 @@ const OurValue = ({ slice }: OurValueProps): JSX.Element => {
               opacity: 1,
               y: 0,
               transition: {
-                type: "spring",
-                bounce: 0.4,
-                duration: 0.8,
+                //type: "spring",
+                bounce: 0,
+                duration: 2,
               },
             }}
-            viewport={{ amount: 0.5 }}
+            viewport={{ amount: 0.5,once:true  }}
             className="flex flex-col items-center bg-[#14193C] text-white/90 duration-300 md:flex-row"
           >
             {/* Accordion------------------------------------------------------------starts here */}

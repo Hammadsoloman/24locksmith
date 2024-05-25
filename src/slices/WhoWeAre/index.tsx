@@ -19,20 +19,23 @@ const WhoWeAre = ({ slice }: WhoWeAreProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <section>
-        <div className="rc-container flex flex-col gap-10 duration-300 md:flex-row overflow-hidden">
+        <div className="rc-container flex flex-col gap-10 overflow-hidden duration-300 md:flex-row">
           {/* CTA------------------------------------------------------------starts here */}
-          <motion.div    initial={{ opacity: 0, x: -100 }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              type: "spring",
-              bounce: 0.4,
-              duration: 1,
-            },
-          }}
-          viewport={{ amount: 0.5 }} className="flex flex-col gap-5 md:w-1/2">
-            <h6 className="text-[#279DD7] font-bold">WHO WE ARE</h6>
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                type: "spring",
+                bounce: 0.4,
+                duration: 2,
+              },
+            }}
+            viewport={{ amount: 0.5, once: true }}
+            className="flex flex-col gap-5 md:w-1/2"
+          >
+            <h6 className="font-bold text-[#279DD7]">WHO WE ARE</h6>
             <h2 className="text-5xl font-bold">
               {asText(slice.primary.heading)}
             </h2>
@@ -40,14 +43,14 @@ const WhoWeAre = ({ slice }: WhoWeAreProps): JSX.Element => {
             <div className="grid grid-cols-2">
               {slice.items.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <span className="bg-[#279DD7] h-4 w-4 rounded-full"></span>
+                  <span className="h-4 w-4 rounded-full bg-[#279DD7]"></span>
                   <span>{item.item}</span>
                 </div>
               ))}
             </div>
             <Separator />
             <div className="flex items-center gap-3">
-              <span className="bg-[#279DD7] grid h-14 w-14 place-items-center">
+              <span className="grid h-14 w-14 place-items-center bg-[#279DD7]">
                 <Image
                   src={"/contact-icon.png"}
                   alt="Contact Icon"
@@ -68,20 +71,23 @@ const WhoWeAre = ({ slice }: WhoWeAreProps): JSX.Element => {
           {/* CTA------------------------------------------------------------ends here */}
 
           {/* Image------------------------------------------------------------starts here */}
-          <motion.div  initial={{ opacity: 0, x: 100 }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              type: "spring",
-              bounce: 0.4,
-              duration: 1,
-            },
-          }}
-          viewport={{ amount: 0.5 }} className="relative ml-4 mt-4 w-full duration-300 md:w-1/2">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                type: "spring",
+                bounce: 0.4,
+                duration: 2,
+              },
+            }}
+            viewport={{ amount: 0.5 ,once:true }}
+            className="relative ml-4 mt-4 w-full duration-300 md:w-1/2"
+          >
             <div className="absolute -left-5 -top-5 bg-white p-1">
-              <div className="bg-[#14193C] w-fit p-5 text-center">
-                <h2 className="text-[#279DD7] text-3xl font-bold">
+              <div className="w-fit bg-[#14193C] p-5 text-center">
+                <h2 className="text-3xl font-bold text-[#279DD7]">
                   {slice.primary.featured_image_lable}
                 </h2>
                 <p className="text-white">YEARS OF EXPERIENCE</p>

@@ -26,6 +26,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "keys_gallery": {
+              "type": "SharedSlice"
+            },
+            "our_services": {
+              "type": "SharedSlice"
+            },
             "commercial_services": {
               "type": "SharedSlice"
             },

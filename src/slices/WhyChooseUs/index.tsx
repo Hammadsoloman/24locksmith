@@ -53,18 +53,19 @@ const WhyChooseUs = ({ slice }: WhyChooseUsProps): JSX.Element => {
             {/* Cards------------------------------------------------------------starts here */}
             <div className="grid grid-cols-2 gap-8 overflow-hidden">
               {slice.items.map((card, idx) => (
-                <motion.div   initial={{ opacity: 0, y: 10 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    type: "spring",
-                    bounce: 0.4,
-                    duration: 1,
-                    delay: idx * 0.2,
-                  },
-                }}
-                viewport={{ once: false, amount: 0.2 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      bounce: 0.4,
+                      duration: 2,
+                      delay: (idx+1) * 0.5,
+                    },
+                  }}
+                  viewport={{ once: true, amount: 0.2 }}
                   key={idx}
                   className="group flex w-full flex-col items-center gap-2 bg-[#14193C] px-4 py-10 duration-300 hover:bg-[#279DD7] xl:max-w-xs"
                 >

@@ -44,11 +44,11 @@ const OurTeam = ({ slice }: OurTeamProps): JSX.Element => {
                   transition: {
                     type: "spring",
                     bounce: 0.4,
-                    duration: 1,
+                    duration: 2,
                     delay:idx*0.2
                   },
                 }}
-                viewport={{ amount: 0.5 }}
+                viewport={{ amount: 0.5 ,once:true }}
                 key={idx}
                 className="relative ml-7 bg-[#14193C] p-5"
               >

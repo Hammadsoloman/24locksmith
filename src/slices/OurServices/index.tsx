@@ -3,6 +3,7 @@ import { Content, asText } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/layout/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
+import { motion } from "framer-motion";
 
 /**
  * Props for `OurServices`....
@@ -26,14 +27,25 @@ const OurServices = ({ slice }: OurServicesProps): JSX.Element => {
         </h2>
         <div className="grid grid-cols-2 gap-4 text-center md:grid-cols-4 ">
           {slice?.items.map((item, idx) => (
-            <div key={idx} className="p-5">
+            <motion.div key={idx} className="p-5"  initial={{ opacity: 0, y: 10 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: "spring",
+                bounce: 0.4,
+                duration: 2,
+                delay: (idx+1) * 0.5,
+              },
+            }}
+            viewport={{ once: true, amount: 0.2 }}>
               <PrismicNextImage
                 field={item.service_image}
                 fallbackAlt=""
                 className="m-auto"
               />
               <p className="pt-5 font-bold ">{item.service_name}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Bounded>

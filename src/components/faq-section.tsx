@@ -9,104 +9,42 @@ import { SliceComponentProps } from "@prismicio/react";
 export function FaqSection({
   slice,
 }: SliceComponentProps<Content.FaqSectionSlice>) {
+ 
   return (
-    <div className="mx-auto max-w-7xl bg-white p-10 py-16 md:py-32">
+    <div className="mx-auto max-w-7xl bg-white p-10 py-16 md:py-32 my-20 ">
       <div className="mx-auto text-center">
-        <h2 className="mb-3 text-4xl font-bold">{slice.primary.heading}</h2>
-        <p className="mb-6 text-gray-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-        </p>
+        <h2 className="mb-3 text-4xl font-bold">{slice?.primary?.heading}</h2>
+        <p className="mb-6 text-gray-600">{slice?.primary?.tagline}</p>
       </div>
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
         <div>
           <div className="space-y-4">
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Purus aptent blandit magna eu?
-                <ChevronUpIcon className="float-right" />
-              </summary>
-              <p className="mt-2 text-gray-600">
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts. Separated
-                they live in Bookmarks grove right at the coast
-              </p>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Potenti laoreet ipsum ridiculus curae?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Viverra efficitur porttitor dictum cursus?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Eget aenean est torquent ullamcorper?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Vivamus fermentum sociosqu elit curabitur?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Etiam aliquet integer consequat rutrum?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
+            {slice?.items
+              ?.slice(0, Math.ceil(slice?.items?.length / 2))
+              .map((item, idx) => (
+                <details key={idx} className="rounded-md bg-gray-100 p-4">
+                  <summary className="cursor-pointer font-semibold">
+                    {item?.trigger}
+                    <ChevronUpIcon className="float-right" />
+                  </summary>
+                  <p className="mt-2 text-gray-600">{item?.content}</p>
+                </details>
+              ))}
           </div>
         </div>
         <div>
           <div className="space-y-4">
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Purus aptent blandit magna eu?
-                <ChevronUpIcon className="float-right" />
-              </summary>
-              <p className="mt-2 text-gray-600">
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts. Separated
-                they live in Bookmarks grove right at the coast
-              </p>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Potenti laoreet ipsum ridiculus curae?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Viverra efficitur porttitor dictum cursus?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Eget aenean est torquent ullamcorper?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Vivamus fermentum sociosqu elit curabitur?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
-            <details className="rounded-md bg-gray-100 p-4">
-              <summary className="cursor-pointer font-semibold">
-                Etiam aliquet integer consequat rutrum?
-                <ChevronDownIcon className="float-right" />
-              </summary>
-            </details>
+            {slice?.items
+              ?.slice(Math.ceil(slice?.items?.length / 2), slice?.items.length)
+              .map((item, idx) => (
+                <details key={idx} className="rounded-md bg-gray-100 p-4">
+                  <summary className="cursor-pointer font-semibold">
+                    {item?.trigger}
+                    <ChevronUpIcon className="float-right" />
+                  </summary>
+                  <p className="mt-2 text-gray-600">{item?.content}</p>
+                </details>
+              ))}
           </div>
         </div>
       </div>

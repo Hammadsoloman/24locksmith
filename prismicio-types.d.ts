@@ -195,6 +195,9 @@ export type LocationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | LocationsSlice
+  | FaqSectionSlice
+  | CommercialServicesSlice
   | OurServicesSlice
   | WhyChooseUsSlice
   | WhoWeAreSlice
@@ -372,6 +375,8 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServicePageDocumentDataSlicesSlice =
+  | KeysGallerySlice
+  | OurServicesSlice
   | CommercialServicesSlice
   | WhoWeAreSlice
   | WhyChooseUsSlice
@@ -1584,6 +1589,61 @@ export type KeysGallerySlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Locations → Primary*
+ */
+export interface LocationsSliceDefaultPrimary {
+  /**
+   * Title field in *Locations → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: locations.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Background Image field in *Locations → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: locations.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Locations Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LocationsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LocationsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Locations*
+ */
+type LocationsSliceVariation = LocationsSliceDefault;
+
+/**
+ * Locations Shared Slice
+ *
+ * - **API ID**: `locations`
+ * - **Description**: Locations
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LocationsSlice = prismic.SharedSlice<
+  "locations",
+  LocationsSliceVariation
+>;
+
+/**
  * Primary content in *Map → Primary*
  */
 export interface MapSliceDefaultPrimary {
@@ -2537,6 +2597,10 @@ declare module "@prismicio/client" {
       KeysGallerySliceDefaultPrimary,
       KeysGallerySliceVariation,
       KeysGallerySliceDefault,
+      LocationsSlice,
+      LocationsSliceDefaultPrimary,
+      LocationsSliceVariation,
+      LocationsSliceDefault,
       MapSlice,
       MapSliceDefaultPrimary,
       MapSliceVariation,

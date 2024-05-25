@@ -15,6 +15,7 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   highlight: dynamic(() => import("./Highlight")),
   keys_gallery: dynamic(() => import("./KeysGallery")),
+  locations: dynamic(() => import("./Locations")),
   map: dynamic(() => import("./Map")),
   our_services: dynamic(() => import("./OurServices")),
   our_team: dynamic(() => import("./OurTeam")),
