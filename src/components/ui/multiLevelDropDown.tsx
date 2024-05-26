@@ -27,7 +27,7 @@ export default function MultiLevelDropDown({
 
   return (
     <div
-      className="relative flex w-full justify-between px-4 hover:bg-gray-100"
+      className="relative hidden md:flex w-full justify-between px-4 hover:bg-gray-100"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
