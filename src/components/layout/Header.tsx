@@ -17,9 +17,9 @@ export default async function Header() {
     client.getAllByType("page"),
   ]);
 
-  const carKeyReplacementPages = await client.getAllByType(
-    "car_key_replacement",
-  );
+ // const carKeyReplacementPages = await client.getAllByType(
+ //   "car_key_replacement",
+ // );
 
   let pages: PageDocument<string>[] = filterAndSortDocument(items[1]);
 
@@ -47,7 +47,7 @@ export default async function Header() {
     <HeaderNavigation
       pages={mutated as any}
       settings={items[0]}
-      carKeyReplacementPages={carKeyReplacementPages as any}
+     // carKeyReplacementPages={carKeyReplacementPages as any}
     />
   );
 }

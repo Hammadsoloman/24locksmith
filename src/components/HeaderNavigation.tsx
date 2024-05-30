@@ -26,7 +26,7 @@ export type CustomPageDocument = PageDocument & {
 type HeaderNavigationProps = {
   pages: CustomPageDocument[];
   settings: SettingsDocument;
-  carKeyReplacementPages: CustomPageDocument[];
+  //carKeyReplacementPages: CustomPageDocument[];
 };
 
 const isHome = (uid: string): boolean => {
@@ -38,7 +38,7 @@ const isHome = (uid: string): boolean => {
 export default function HeaderNavigation({
   pages,
   settings,
-  carKeyReplacementPages,
+  //carKeyReplacementPages,
 }: HeaderNavigationProps) {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -144,7 +144,7 @@ export default function HeaderNavigation({
               closeModal={() => {}}
               settings={settings}
               pages={pages}
-              carKeyReplacementPages={carKeyReplacementPages}
+             // carKeyReplacementPages={carKeyReplacementPages}
             />
           )}
         </Bounded>
@@ -178,7 +178,7 @@ export default function HeaderNavigation({
             <Menu
               closeModal={() => setModalVisible(false)}
               settings={settings}
-              carKeyReplacementPages={carKeyReplacementPages}
+              //carKeyReplacementPages={carKeyReplacementPages}
               pages={pages}
             />
           )}
@@ -204,13 +204,13 @@ const HeaderImage = ({ field }: { field: ImageFieldImage }) => {
 const Menu = ({
   settings,
   pages,
-  carKeyReplacementPages,
+  //carKeyReplacementPages,
   closeModal,
 }: HeaderNavigationProps & { closeModal: () => void }) => {
   const uid = usePathname();
-  const Locations = pages.find(
-    (p) => p.type === "page" && p.uid === "locations",
-  )?.data?.dropdown_items;
+ //const Locations = pages.find(
+ //  (p) => p.type === "page" && p.uid === "locations",
+ //)?.data?.dropdown_items;
   return (
     <>
       <nav>
@@ -277,12 +277,12 @@ const Menu = ({
                               `md:grid-cols-1`,
                             )}
                           >
-                            {page.type === "page" &&
+                            {/*page.type === "page" &&
                               page.uid === "services" && (
                                 <div className="flex items-start gap-2 rounded py-2 hover:bg-gray-100">
                                   <MultiLevelDropDown locations={Locations} carKeyReplacementPages={carKeyReplacementPages}/>
                                 </div>
-                              )}
+                              )*/}
                             {page.data.dropdown_items.map((item: any) => (
                               <div
                                 key={item.id}
