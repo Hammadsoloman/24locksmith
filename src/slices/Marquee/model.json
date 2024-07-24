@@ -20,6 +20,13 @@
             "allowTargetBlank": true,
             "single": "heading2"
           }
+        },
+        "speed": {
+          "type": "Number",
+          "config": {
+            "label": "Speed",
+            "placeholder": "Speed calculated as pixels/second"
+          }
         }
       },
       "items": {

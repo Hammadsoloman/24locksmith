@@ -1791,6 +1791,16 @@ export interface MarqueeSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
+
+  /**
+   * Speed field in *Marquee → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: Speed calculated as pixels/second
+   * - **API ID Path**: marquee.primary.speed
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  speed: prismic.NumberField;
 }
 
 /**
