@@ -17,6 +17,7 @@ export const components = {
   keys_gallery: dynamic(() => import("./KeysGallery")),
   locations: dynamic(() => import("./Locations")),
   map: dynamic(() => import("./Map")),
+  marquee: dynamic(() => import("./Marquee")),
   our_services: dynamic(() => import("./OurServices")),
   our_team: dynamic(() => import("./OurTeam")),
   our_value: dynamic(() => import("./OurValue")),

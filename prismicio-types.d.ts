@@ -276,6 +276,7 @@ export type LocationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | MarqueeSlice
   | LocationsSlice
   | FaqSectionSlice
   | CommercialServicesSlice
@@ -1778,6 +1779,66 @@ type MapSliceVariation = MapSliceDefault;
 export type MapSlice = prismic.SharedSlice<"map", MapSliceVariation>;
 
 /**
+ * Primary content in *Marquee → Primary*
+ */
+export interface MarqueeSliceDefaultPrimary {
+  /**
+   * Title field in *Marquee → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+}
+
+/**
+ * Primary content in *Marquee → Items*
+ */
+export interface MarqueeSliceDefaultItem {
+  /**
+   * Image field in *Marquee → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Marquee Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarqueeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MarqueeSliceDefaultPrimary>,
+  Simplify<MarqueeSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Marquee*
+ */
+type MarqueeSliceVariation = MarqueeSliceDefault;
+
+/**
+ * Marquee Shared Slice
+ *
+ * - **API ID**: `marquee`
+ * - **Description**: Marquee
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarqueeSlice = prismic.SharedSlice<
+  "marquee",
+  MarqueeSliceVariation
+>;
+
+/**
  * Primary content in *OurServices → Primary*
  */
 export interface OurServicesSliceDefaultPrimary {
@@ -2690,6 +2751,11 @@ declare module "@prismicio/client" {
       MapSliceDefaultPrimary,
       MapSliceVariation,
       MapSliceDefault,
+      MarqueeSlice,
+      MarqueeSliceDefaultPrimary,
+      MarqueeSliceDefaultItem,
+      MarqueeSliceVariation,
+      MarqueeSliceDefault,
       OurServicesSlice,
       OurServicesSliceDefaultPrimary,
       OurServicesSliceDefaultItem,
