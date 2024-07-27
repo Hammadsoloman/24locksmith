@@ -1,3 +1,4 @@
+"use client";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
@@ -11,7 +12,6 @@ export type MarqueeProps = SliceComponentProps<Content.MarqueeSlice>;
  * Component for "Marquee" Slices.
  */
 const Marquee = ({ slice }: MarqueeProps): JSX.Element => {
-  console.log(slice, "mmm");
   return (
     <section
       className="relative my-16 md:my-32"
