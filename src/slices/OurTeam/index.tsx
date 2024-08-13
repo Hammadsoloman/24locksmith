@@ -4,6 +4,8 @@ import { Content, asLink, asText } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { PrismicNextImage } from "@prismicio/next";
 /**
  * Props for `OurTeam`.
  */
@@ -53,7 +55,7 @@ const OurTeam = ({ slice }: OurTeamProps): JSX.Element => {
                 className="relative ml-7 bg-[#14193C] p-5"
               >
                 <div className="absolute -left-7 top-1/2 h-14 w-14 -translate-y-1/2 bg-[#279DD7]">
-                  {item.icon.url && <img src={item.icon.url} />}
+                  {item.icon.url && <PrismicNextImage field={item.icon} fallbackAlt="" />}
                 </div>
                 <div className="ml-7">
                   <h6 className="text-md font-bold text-[#279DD7]">

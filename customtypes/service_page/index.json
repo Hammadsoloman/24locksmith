@@ -26,6 +26,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "marquee": {
+              "type": "SharedSlice"
+            },
             "keys_gallery": {
               "type": "SharedSlice"
             },
