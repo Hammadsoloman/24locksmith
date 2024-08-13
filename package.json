@@ -1,17 +1,13 @@
 {
-  "name": "nextjs-starter-prismic-minimal-ts",
+  "name": "24-locksmith",
   "version": "0.1.0",
   "private": true,
-  "license": "Apache-2.0",
-  "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
-    "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
-    "next:dev": "next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "slicemachine": "start-slicemachine",
-    "format": "prettier --write ."
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@plaiceholder/next": "^3.0.0",
@@ -37,6 +33,7 @@
     "react-leaflet": "^4.2.1",
     "react-masonry": "^1.0.7",
     "resend": "^3.2.0",
+    "sharp": "0.32.6",
     "swiper": "^11.1.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
